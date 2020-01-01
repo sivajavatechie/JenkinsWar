@@ -11,12 +11,12 @@ node{
       echo  bat "mvn --version"
    }
    stage ('Stop Tomcat Server') {
-      bat "shutdown"
+      bat "${tomcatBin}\\shutdown.bat"
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
       stage ('Start Tomcat Server') {
-      bat "startup"
+      bat "${tomcatBin}\\startup.bat"
    }
 }
