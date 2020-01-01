@@ -9,6 +9,6 @@ node{
       bat "${mvnHome}/bin/mvn package"
    }
    stage('Deploy to Tomcat'){
-     bat "copy target\\JenkinsWar*.war \"${tomcatWeb}\\JenkinsWar.war\""
+     bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
 }
