@@ -8,8 +8,7 @@ node{
       // Get maven home path
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
       bat "${mvnHome}/bin/mvn package"
-      echo  bat "mvn --version"
-   }
+      }
    stage ('Stop Tomcat Server') {
       bat "${tomcatBin}\\shutdown.bat"
    }
