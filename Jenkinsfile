@@ -14,12 +14,12 @@ node{
       bat "${mvnHome}/bin/mvn package"
       }
    stage ('Stop Tomcat Server') {
-      bat "${CATALINA_HOME}\\bin\\shutdown.bat"
+      bat "${tomcatBin}\\shutdown.bat"
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
       stage ('Start Tomcat Server') {
-         bat "${CATALINA_HOME }\\bin\\shutdown.bat"
+         bat "${tomcatBin}\\shutdown.bat"
    }
 }
