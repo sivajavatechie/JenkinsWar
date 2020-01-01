@@ -1,4 +1,8 @@
 node{
+    environment {
+        CATALINA_HOME = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20'
+    }
+   
    def tomcatWeb = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20\\webapps'
    def tomcatBin = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20\\bin'
    stage('SCM Checkout'){
@@ -10,12 +14,12 @@ node{
       bat "${mvnHome}/bin/mvn package"
       }
    stage ('Stop Tomcat Server') {
-      bat "${tomcatBin}\\shutdown.bat"
+      bat "${CATALINA_HOME}\\bin\\shutdown.bat"
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
       stage ('Start Tomcat Server') {
-         bat "${tomcatBin }\\shutdown.bat"
+         bat "${CATALINA_HOME }\\bin\\shutdown.bat"
    }
 }
