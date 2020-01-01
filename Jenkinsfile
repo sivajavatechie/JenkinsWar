@@ -1,10 +1,7 @@
 node{
-    environment {
-        CATALINA_HOME = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20'
-    }
-   
-   def tomcatWeb = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20\\webapps'
-   def tomcatBin = 'C:\\Users\\sivareddy.c\\Downloads\\apache-tomcat-9.0.20-windows-x64\\apache-tomcat-9.0.20\\bin'
+
+   def tomcatWeb = 'D:\Auto deployment\apache-tomcat-9.0.30\apache-tomcat-9.0.30\\webapps'
+   def tomcatBin = 'D:\Auto deployment\apache-tomcat-9.0.30\apache-tomcat-9.0.30\bin'
    stage('SCM Checkout'){
      git 'https://github.com/sivajavatechie/JenkinsWar.git'
    }
