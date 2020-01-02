@@ -15,7 +15,7 @@ node{
                bat ''' @ECHO OFF
                SC query tomcat9 | FIND "STATE" | FIND "RUNNING" > NUL
                IF ERRORLEVEL 1 (
-                   tomcatStatus = "Stopped"
+                    echo  Stopped
                ) ELSE (
                   "${tomcatBin}\\shutdown.bat"
                )
