@@ -17,7 +17,7 @@ node{
                IF ERRORLEVEL 1 (
                    tomcatStatus = "Stopped"
                ) ELSE (
-                   tomcatStatus = "Running"
+                  "${tomcatBin}\\shutdown.bat"
                )
 '''
       if (tomcatStatus.equals("Running")) {
