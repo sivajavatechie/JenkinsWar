@@ -19,12 +19,9 @@ node{
                ) ELSE (
                echo running
                   "${tomcatBin}\\shutdown.bat"
+                  sleep(time:10,unit:"SECONDS") 
                )
 '''
-      if (tomcatStatus.equals("Running")) {
-         bat "${tomcatBin}\\shutdown.bat"
-         sleep(time:10,unit:"SECONDS") 
-      }
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
