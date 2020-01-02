@@ -18,6 +18,6 @@ node{
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
       stage ('Start Tomcat Server') {
-         bat "${tomcatBin}\\shutdown.bat"
+         bat "${tomcatBin}\\startup.bat"
    }
 }
