@@ -12,8 +12,7 @@ node{
       }
    stage ('Stop Tomcat Server') {
       bat "${tomcatBin}\\shutdown.bat"
-      timeout(time: 20, unit: 'SECONDS') {
-      }
+      sleep(time:10,unit:"SECONDS") 
    }
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
