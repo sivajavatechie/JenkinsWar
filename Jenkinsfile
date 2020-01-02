@@ -17,6 +17,7 @@ node{
                IF ERRORLEVEL 1 (
                     echo  Stopped
                ) ELSE (
+               echo running
                   "${tomcatBin}\\shutdown.bat"
                )
 '''
