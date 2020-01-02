@@ -13,7 +13,7 @@ node{
       }
    stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
-               SC query tomcat9 | FIND "STATE" | FIND "RUNNING" > NUL
+               wmic process list brief | find /i "tomcat" > NUL
                IF ERRORLEVEL 1 (
                     echo  Stopped
                ) ELSE (
