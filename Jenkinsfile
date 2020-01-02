@@ -18,6 +18,15 @@ node{
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
       stage ('Start Tomcat Server') {
+         
+         bat ''' @ECHO OFF
+               SC query tomcat9 | FIND "STATE" | FIND "RUNNING" > NUL
+               IF ERRORLEVEL 1 (
+                   ECHO Stopped
+               ) ELSE (
+                   ECHO Running
+               )
+'''
          bat "${tomcatBin}\\startup.bat"
    }
 }
