@@ -11,7 +11,7 @@ node{
       def mvnHome =  tool name: 'maven-3', type: 'maven'   
       bat "${mvnHome}/bin/mvn package"
       }
-   stage ('Stop Tomcat Server') {
+/*   stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
                wmic process list brief | find /i "tomcat" > NUL
                IF ERRORLEVEL 1 (
@@ -22,7 +22,7 @@ node{
                   sleep(time:10,unit:"SECONDS") 
                )
 '''
-   }
+   }*/
    stage('Deploy to Tomcat'){
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
