@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git credentialsId: 'mygithubid', branch: 'master',  url: 'https://github.com/saravananajay/JenkinsWar.git' 
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "/opt/maven/bin/mvn clean install"                
+            }
+        }
+        stage("Target copying"){
+            steps{
+                sh " cp -rf $WORKSPACE/target/JenkinsWar $WORKSPACE/"                
+            }
+        }		
+        stage(" Application Build using Docker  "){
+            steps{
+                sh "sudo /usr/bin/docker build -t myapplication:1.0 . "
+            }
+        }
+        stage(" Application deploy using Docker  "){
+            steps{
+                sh "sudo /usr/bin/docker run -d -p 6060:8080 --name myonlineapplication2-1818  myapplication:1.0  "
+            }
+        }			
+    }
+}
