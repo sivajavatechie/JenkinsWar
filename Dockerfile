@@ -1,4 +1,4 @@
 FROM myownwebserverimage:8.5.69-jdk8 
-COPY ./$WORKSPACE/target/JenkinsWar.war /usr/local/tomcat/webapps/
+COPY ./JenkinsWar /usr/local/tomcat/webapps/JenkinsWar
 EXPOSE 8080
 
