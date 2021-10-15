@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2> This is my Tomcat Demo </h2>
+<h2> end to end automation </h2>
 </body>
 </html>
