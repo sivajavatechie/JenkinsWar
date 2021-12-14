@@ -18,4 +18,11 @@
   <build>
     <finalName>saro</finalName>
   </build>
+  <distributionManagement>
+    <repository>
+        <id>myprod</id>
+        <name>snapshot</name>
+        <url>http://44.200.152.124:8081/repository/snapshot/</url>
+    </repository>
+  </distributionManagement>
 </project>
