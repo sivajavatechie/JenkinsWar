@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2> @ jenkins job were created. </h2>
+<h2> deploying war from nexus </h2>
 </body>
 </html>
