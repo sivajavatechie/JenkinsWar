@@ -1,0 +1,18 @@
+---
+- hosts: webserver
+  become: yes
+  vars:
+  - warName: JenkinsWar1-1.0-20211215.025011-3.war
+  - warRemotePath: /usr/local/tomcat9/webapps/newdemo
+  - warurl: http://100.27.8.192:8081/repository/mysnapshot/com/jenkins/demo/JenkinsWar1/1.0-SNAPSHOT/JenkinsWar1-1.0-20211216.044012-5.war
+  tasks:
+  - name: Download WAR to server
+    command: wget --user admin --password saro1234 {{ warurl }} -O {{ warRemotePath }}/{{ warName }}
+  - name: Unzip WAR file
+    unarchive: src={{ warRemotePath }}/{{ warName }} dest=/usr/local/tomcat9/webapps/demo1818 copy=no mode=0755 owner=root group=root
+
+  - name: Delete remote war file
+    file: path={{ warRemotePath }}/{{ warName }} state=absent
+
+  - name: wait for tomcat to start
+    wait_for: port=8080 timeout=60
