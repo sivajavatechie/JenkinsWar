@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2> deploying war from nexus </h2>
+<h2> deploying war using ANSIABLE </h2>
 </body>
 </html>
