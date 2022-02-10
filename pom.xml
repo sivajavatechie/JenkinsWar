@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>saro</finalName>
+    <finalName>ajith-valimai</finalName>
   </build>
   <distributionManagement>
     <repository>
