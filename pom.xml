@@ -4,7 +4,7 @@
   <groupId>com.jenkins.demo</groupId>
   <artifactId>MarchMonth</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -17,9 +17,9 @@
   </dependencies>
   <distributionManagement>
     <repository>
-        <id>myprod</id>
-        <name>snapshot</name>
-        <url>http://100.27.8.192:8081/repository/mysnapshot/</url>
+        <id>myownrepoid</id>
+        <name>release</name>
+        <url>http://13.233.167.243:8081/repository/prodrelease/</url>
     </repository>
   </distributionManagement>
 </project>
