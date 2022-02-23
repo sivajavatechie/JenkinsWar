@@ -19,7 +19,7 @@
     <repository>
         <id>myownrepoid</id>
         <name>release</name>
-        <url>http://13.233.167.243:8081/repository/prodrelease/</url>
+        <url>http://3.108.44.202:8081/repository/prodrelease/</url>
     </repository>
   </distributionManagement>
 </project>
