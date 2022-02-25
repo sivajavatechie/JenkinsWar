@@ -1,0 +1,27 @@
+pipeline {
+  agent {
+    label 'masternode'
+  }
+  parameters {
+    string defaultValue: 'master', description: 'master|release|develop', name: 'branchname'
+	string defaultValue: 'prod', description: 'prod|stg|dev', name: 'environmental'
+  }
+  
+  
+  stages {
+    stage('GIT-CLONE') {
+      steps {
+      git credentialsId: 'mydeploy', branch: "${params.branchname}", url: 'https://github.com/saravananajay/JenkinsWar.git' 
+      }
+    }
+    stage('MAVEN-BUILD') {
+      steps {
+      sh  """
+	   
+	  /opt/maven/bin/mvn clean install 
+	   
+	  """
+      }
+    }	
+  }
+}
