@@ -19,7 +19,7 @@
         <repository>
          <id>mynexus-id</id>
          <name>myrelease</name>
-         <url>http://44.212.4.112:8081/repository/maven-releases/</url>
+         <url>http://44.212.4.112:8081/repository/myrelease/</url>
        </repository>	   
 </distributionManagement>  
 </project>
