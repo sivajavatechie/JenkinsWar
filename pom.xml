@@ -4,7 +4,7 @@
   <groupId>com.jenkins.demo</groupId>
   <artifactId>JenkinsWar1</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -15,7 +15,11 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <build>
-    <finalName>JenkinsWar</finalName>
-  </build>
+  <distributionManagement>
+        <repository>
+         <id>mynexus-id</id>
+         <name>myrelease</name>
+         <url>http://44.212.4.112:8081/repository/maven-releases/</url>
+       </repository>	   
+</distributionManagement>  
 </project>
