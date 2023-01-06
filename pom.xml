@@ -4,7 +4,7 @@
   <groupId>com.jenkins.demo</groupId>
   <artifactId>Demoapplication</artifactId>
   <packaging>war</packaging>
-  <version>2.0-snapshot</version>
+  <version>3.0-snapshot</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
