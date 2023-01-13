@@ -10,6 +10,11 @@ pipeline {
 	  steps{
 	   sh "/opt/maven/bin/mvn clean install"	  	  
 	  }	
-	}	 
+	}
+    stage('DEPLOY'){
+         steps{
+           deploy contextPath: 'Pipeline-scm', war: 'target/*.war'
+          }
+     }	
   }
 }
