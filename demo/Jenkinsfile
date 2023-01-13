@@ -3,7 +3,7 @@ pipeline {
   stages {  
     stage ('GIT-CLONE') {	
 	  steps{
-	    git changelog: false,  poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'	  
+	    checkout([$class: 'GitSCM', branches: [[name: 'demo']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Vimala-Daniel/JenkinsWar.git']]])	  
 	  }	
 	}
     stage ('MAVEN-BUILD') {	
