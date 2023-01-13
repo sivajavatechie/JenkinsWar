@@ -1,0 +1,15 @@
+pipeline {
+  agent { label 'maven' }
+  stages {  
+    stage ('GIT-CLONE') {	
+	  steps{
+	    git changelog: false,  poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'	  
+	  }	
+	}
+    stage ('MAVEN-BUILD') {	
+	  steps{
+	   sh "/opt/maven/bin/mvn clean install"	  	  
+	  }	
+	}	 
+  }
+}
