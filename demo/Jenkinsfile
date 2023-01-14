@@ -8,7 +8,8 @@ pipeline {
 	}
     stage ('MAVEN-BUILD') {	
 	  steps{
-	   sh "/opt/maven/bin/mvn clean install"	  	  
+	   sh "/opt/maven/bin/mvn clean install"	
+           echo "Pipeline Build Test"		  
 	  }	
 	}
      }	
