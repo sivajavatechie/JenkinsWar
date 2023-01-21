@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    environment{
+        USER_NAME = "Joe"
+        USER_ID = 42
+      }
+    stages{
+      stage("Using env vars"){
+	steps{
+	   echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
+           sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
+           echo "Current user is ${env.USER_NAME}"
+	   echo "Current user id is ${env.USER_ID} type: ${env.USER_ID.class}"			
+	 }
+      }
+    }
+ }
