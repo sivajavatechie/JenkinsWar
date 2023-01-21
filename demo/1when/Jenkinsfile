@@ -7,8 +7,8 @@ pipeline {
   stages {  
     stage ('GIT-CLONE') {	
 	   when {
-         branch 'develop'
-       }	
+             branch 'develop'
+            }	
 	  steps{
 	    git branch: "${params.branchname}", changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'	  
 	  }	
