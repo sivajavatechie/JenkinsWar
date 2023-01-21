@@ -9,6 +9,5 @@ pipeline {
 	    git branch: 'develop', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'		  
 	  }	
 	}
- 
-   }
+    }
 }   
