@@ -1,0 +1,17 @@
+pipeline {
+  agent { label 'maven' 
+  }
+  parameters {
+  string description: 'please pass repo Branch Name', name: 'branchname'
+  }
+  stages {  
+    stage ("GIT-CLONE") {
+      when {
+      expression { return  params.branchname ==~ /master|release/ }
+     }	
+	  steps{
+	    git branch: "${params.branchname}", changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'	  
+	  }	
+    }	 
+  }
+}
