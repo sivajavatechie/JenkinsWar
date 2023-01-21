@@ -1,0 +1,10 @@
+pipeline {
+    agent { label 'maven' }
+    stages {
+        stage('EXAMPLE') {
+            steps {
+                echo 'Hello everyone'
+            }
+        }
+    }
+}
