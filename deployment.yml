@@ -1,0 +1,4 @@
+- hosts: appserver
+  tasks:  
+  - name: copying data from jenkins to tomcat
+    copy: src=${WORKSPACE}/target/JenkinsWar dest=/usr/local/tomcat9/webapps/
