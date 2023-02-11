@@ -13,7 +13,7 @@ pipeline {
 	}	 
     stage ('DEPLOY-TOMCAT') {
 	  steps{
-	   deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://52.87.241.68:8080/')], contextPath: 'pipeline-scm', war: 'target/*.war'
+	   deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://34.224.95.96:8080/')], contextPath: 'pipeline-scm', war: 'target/*.war'
 	  
 	   echo "Pipeline Deploy Test"
 	
