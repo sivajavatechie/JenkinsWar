@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'maven' 
+  agent { label 'slavenode1-maven' 
   }
   parameters {
   string description: 'please pass repo Branch Name', name: 'branchname'
