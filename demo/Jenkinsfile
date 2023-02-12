@@ -15,7 +15,7 @@ pipeline {
 	}	 
     stage ('DEPLOY-TOMCAT-USING-ANSIBLE') {
 	  steps{
-	   ansiblePlaybook become: true, credentialsId: 'root', playbook: '$WORKSPACE/deployment.yml'
+	   ansiblePlaybook become: true, credentialsId: 'root', playbook: '$WORKSPACE/deployment.yml', sudoUser: null
       } 
     }
   }
