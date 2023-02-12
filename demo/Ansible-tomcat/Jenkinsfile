@@ -1,0 +1,22 @@
+pipeline {
+  agent {
+  label 'slavenode1-maven'
+   }
+  stages {  
+    stage ('GIT-CLONE') {	
+	  steps{
+	    git branch: 'demo', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'		  
+	  }	
+	}
+    stage ('MAVEN-BUILD') {	
+	  steps{
+	   sh "/opt/maven/bin/mvn clean install"	  	  
+	  }	
+	}	 
+    stage ('DEPLOY-TOMCAT-USING-ANSIBLE') {
+	  steps{
+	   ansiblePlaybook become: true, credentialsId: 'root', playbook: '$WORKSPACE/deployment.yml'
+      } 
+    }
+  }
+}
