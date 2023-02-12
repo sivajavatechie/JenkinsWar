@@ -1,0 +1,5 @@
+---
+ - hosts: appserver
+   tasks:
+   - name: copying build package from jenkins-nexus to tomcat for App deployment using Ansible
+     copy: src=target/demoapp-1.0 dest=/usr/local/tomcat9/webapps/
