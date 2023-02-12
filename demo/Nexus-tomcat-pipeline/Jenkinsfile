@@ -15,7 +15,7 @@ pipeline {
 	}	 
     stage ('NEXUS-TOMCAT-DEPLOY') {
 	  steps {
-	   deploy adapters: [tomcat9(path: '', url: 'http://54.197.44.32:8080/')], contextPath: 'nexuspipe1125', war: 'target/*.war'
+	   deploy adapters: [tomcat9(path: '', url: 'http://54.197.44.32:8080/')], contextPath: 'nexuspipe', war: 'target/*.war'
 	   }  
     }
   }
