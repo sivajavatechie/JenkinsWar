@@ -1,0 +1,33 @@
+pipeline {
+  agent {
+  label 'slavenode1-maven'
+   }
+  parameters {
+  string description: 'enter ami id', name: 'ami'
+   }
+  parameters {
+  string description: 'enter Instance count', name: 'Instancecount'
+   }
+  parameters {
+  string description: 'enter instance type', name: 'instancetype'
+  }
+  parameters {
+  string description: 'enter keypair', name: 'keypair'
+  }
+  parameters {
+  string description: 'enter sgid', name: 'sgid'
+  }
+  parameters {
+  string description: 'enter region', name: 'region'
+  }
+
+  stages {  
+    stage ('Instance Creation - Dynamic') {	
+	  steps{
+	    sh "
+            aws ec2 run-instances --image-id $ami --count $Instancecount --instance-type $instancetype --key-name $keypair --security-group-ids $sgid --region $region
+	    "      
+      } 
+    }
+  }
+}
