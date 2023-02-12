@@ -1,0 +1,7 @@
+1.ami - ami-0b5eea76982371e91
+Instancecount - 1
+2.instancetype - t2.micro t2.xlarge
+3.sgid - sg-003ca354e40035e19
+4.keypair - SuperKey-Oct16
+5.region - us-east-1
+az
