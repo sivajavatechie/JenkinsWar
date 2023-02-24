@@ -13,7 +13,7 @@ pipeline {
 	   sh "/opt/maven/bin/mvn clean install"	  	  
 	  }	
 	}	 
-    stage ('DEPLOY-TOMCAT-USING-ANSIBLE') {
+    stage ('ANSIBLE-PLAYBOOK') {
 	  steps{
 	   ansiblePlaybook become: true, credentialsId: 'root', playbook: '$WORKSPACE/deployment.yml'
       } 
