@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jenkins.demo</groupId>
-  <artifactId>JenkinsWar1</artifactId>
+  <artifactId>Demoapplication</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>3.0-snapshot</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -15,6 +15,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+       <repository>
+         <id>mynexus-id</id>
+         <name>mysnapshot</name>
+         <url>http://34.207.162.114:8081/repository/mysnapshot/</url>
+       </repository>
+  </distributionManagement>
   <build>
     <finalName>JenkinsWar</finalName>
   </build>
