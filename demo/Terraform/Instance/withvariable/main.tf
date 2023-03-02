@@ -4,7 +4,7 @@ provider "aws" {
 resource "aws_instance" "web-server" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
-  vpc_security_group_ids = ["sg-003ca354e40035e19"]
+  vpc_security_group_ids = [var.sg]
   key_name      = "SuperKey-Oct16"
   tags = {
     Name = "${var.instance_name}"
