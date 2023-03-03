@@ -1,4 +1,4 @@
 variable "region" {}
-variable "bucket_name" {}
+variable "bucketname" {}
 variable "acl" {}
 
