@@ -1,19 +1,19 @@
 pipeline {
   agent {
-  label 'jenkinsmaster'
-   }
+    label 'jenkinsmaster'
+  }
   parameters {
   choice choices: ['us-east-1', 'us-west-1', 'ap-south-1'], description: 'choose region', name: 'region'
   string description: 'enter bucket name', name: 'bucket-name'
   choice choices: ['private', 'public-read', 'public-read-write', 'aws-exec-read', 'authenticated-read', 'log-delivery-write'], description: 'choose acl', name: 'acl'
-     }
-    stages {  
-      stage ('GIT-CLONE') {	
+  }
+  stages {  
+    stage ('GIT-CLONE') {	
 	  steps{
 	    git branch: 'demo', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'		  
 	  }	
 	}	    
-      stage ('Bucket-creation') {	
+    stage ('Bucket-creation') {	
 	  steps{
 	    sh """
            cd $WORKSPACE/demo/Terraform/s3bucket/variables3-fullform/
