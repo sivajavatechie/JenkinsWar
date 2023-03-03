@@ -8,7 +8,12 @@ pipeline {
   choice choices: ['private', 'public-read', 'public-read-write', 'aws-exec-read', 'authenticated-read', 'log-delivery-write'], description: 'choose acl', name: 'acl'
      }
     stages {  
-    stage ('Bucket-creation') {	
+      stage ('GIT-CLONE') {	
+	  steps{
+	    git branch: 'demo', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'		  
+	  }	
+	}	    
+      stage ('Bucket-creation') {	
 	  steps{
 	    sh """
            cd $WORKSPACE/demo/Terraform/s3bucket/variables3-fullform/
