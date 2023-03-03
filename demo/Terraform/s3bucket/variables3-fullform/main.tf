@@ -18,10 +18,11 @@ resource "aws_s3_bucket" "my-bucket" {
      website {
       index_document = "index.html"
       error_document = "error.html"
-  }
+   }
+ }     
 resource "aws_s3_bucket_object" "examplebucket_object" {
   key                    = "someobject"
   bucket                 = aws_s3_bucket.my-bucket.id
   source                 = "index.html"
   }
-}     
+    
