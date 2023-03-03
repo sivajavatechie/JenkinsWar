@@ -4,7 +4,7 @@ pipeline {
   }
   parameters {
   choice choices: ['us-east-1', 'us-west-1', 'ap-south-1'], description: 'choose region', name: 'region'
-  string description: 'enter bucket name', name: 'bucket-name'
+  string description: 'enter bucket name', name: 'bucketname'
   choice choices: ['private', 'public-read', 'public-read-write', 'aws-exec-read', 'authenticated-read', 'log-delivery-write'], description: 'choose acl', name: 'acl'
   }
   stages {  
@@ -18,7 +18,7 @@ pipeline {
 	    sh """
            cd $WORKSPACE/demo/Terraform/s3bucket/variables3-fullform/
            /usr/local/bin/terraform init
-           /usr/local/bin/terraform apply -var "region=$region" -var "bucket_name=$bucket_name" -var "acl=$acl" --auto-approve	  
+           /usr/local/bin/terraform apply -var "region=$region" -var "bucketname=$bucketname" -var "acl=$acl" --auto-approve	  
          """
       } 
     }
