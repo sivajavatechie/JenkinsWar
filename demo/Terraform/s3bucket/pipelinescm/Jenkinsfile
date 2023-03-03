@@ -21,6 +21,8 @@ pipeline {
            /usr/local/bin/terraform apply -var "region=$region" -var "bucketname=$bucketname" -var "acl=$acl" --auto-approve	  
          """
       } 
+    stage ('Bucket-creation') {	
+	  steps{	    
     }
   }
 }
