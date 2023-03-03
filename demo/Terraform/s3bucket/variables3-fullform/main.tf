@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "my-bucket" {
-     bucket = var.bucket_name
+     bucket = var.bucketname
      acl    = var.acl 
      tags  = {
     Ticket = "TASK0001"
