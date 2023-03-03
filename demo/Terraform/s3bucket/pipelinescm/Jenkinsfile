@@ -13,7 +13,7 @@ pipeline {
 	    sh """
            cd $WORKSPACE/demo/Terraform/s3bucket/variables3-fullform/
            /usr/local/bin/terraform init
-           /usr/local/bin/terraform apply -var "region=$region" -var "bucket_name=$bucket_name" -var "acl=$acl" --auto-approve	       """      
+           /usr/local/bin/terraform apply -var "region=$region" -var "bucket_name=$bucket_name" -var "acl=$acl" --auto-approve	  
          """
       } 
     }
