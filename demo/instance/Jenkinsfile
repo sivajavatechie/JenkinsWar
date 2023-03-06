@@ -11,12 +11,18 @@ pipeline {
   string description: 'enter region', name: 'region'
    }
     stages {  
-    stage ('Instance Creation - Dynamic') {	
+	stage ('GIT-CLONE') {	
+	  steps{
+	    git branch: 'demo', changelog: false, credentialsId: 'github', poll: false, url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'
+		}  
+	  }	
+    stage ('Instance Creation Dynamic') {	
 	  steps{
 	    sh """
             aws ec2 run-instances --image-id $ami --count $Instancecount --instance-type $instancetype --key-name $keypair --security-group-ids $sgid --region $region
 	       """      
-      } 
-    }
+       } 
+     }
   }
 }
+ 
