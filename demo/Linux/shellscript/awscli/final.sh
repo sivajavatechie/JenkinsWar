@@ -56,9 +56,9 @@ case "$num4" in
             keypair=SuperKey-Oct16;;
       "2")
         echo "create new keypair"
-        read -p "Enter username:" user
-          keypair=$user-`date "+ %m%d"`
-          echo "keypair: $keypair"
+        #read -p "Enter username:" user
+         #keypair=$user-`date "+ %m%d"`
+          #echo "keypair: $keypair"
 esac
 echo "List of security group id
 1.sg-003ca354e40035e19
