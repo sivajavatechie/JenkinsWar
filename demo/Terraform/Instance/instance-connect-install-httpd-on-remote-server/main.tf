@@ -3,7 +3,10 @@ resource "aws_instance" "web-server" {
   instance_type = "t2.micro"
   key_name      = "SuperKey-Oct16"
   vpc_security_group_ids = ["sg-003ca354e40035e19"]
-
+  
+  provisioner "local-exec" {
+  command = "echo ${aws_instance.web-server.private_ip} >> private-ip.txt"
+  }
 
   provisioner "file" {
     source      = "index.html"
