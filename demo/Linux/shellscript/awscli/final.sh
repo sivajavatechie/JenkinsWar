@@ -110,4 +110,13 @@ aws ec2 run-instances \
         --security-group-ids $sg \
         --subnet-id $subnetid \
         --output $output
+        
+if ( echo $? == 0 )
+then 
+   echo "Instance has been created successfully"
+else
+   echo "Instance is not created"
+   
+fi   
+        
 echo "Instance has been successfully created"
