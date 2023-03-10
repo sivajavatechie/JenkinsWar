@@ -17,4 +17,3 @@ else
    
 fi   
         
-echo "Instance has been successfully created"
