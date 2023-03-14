@@ -28,6 +28,7 @@ variable "ami" {
 
 
 #this will check default value in main.tf which is "prod" and map to correspoding instance_type "t3.micro"
+
 variable "instancetype" {
   type = map
   default = {
