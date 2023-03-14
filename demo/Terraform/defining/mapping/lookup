@@ -1,0 +1,35 @@
+#main.tf
+provider "aws" {
+  region = var.region
+}
+
+resource "aws_instance" "Demo-server" {
+  ami           = lookup(var.ami, var.region)
+  instance_type = var.instancetype["prod"]
+  tags = {
+    Name = "ExampleInstance"
+  }
+}
+
+
+
+#variable.tf
+
+variable "region" {}
+
+variable "instancetype" {
+  type = map
+  default = {
+  dev = "t2.micro"
+  prod = "t3.micro"
+  }
+}
+
+
+variable "ami" {
+  type = map
+  default = {
+  us-east-1 = "ami-0533f2ba8a1995cf9"
+  ap-south-1 = "ami-068d43a544160b7ef"
+  }
+}
