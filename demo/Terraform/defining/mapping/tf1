@@ -1,0 +1,37 @@
+#main.tf
+resource "aws_instance" "Demo-server" {
+  ami           = lookup(var.ami, var.region)
+  instance_type = var.instancetype["prod"]
+  tags = {
+    Name = "ExampleInstance"
+  }
+}
+
+
+
+#variable.tf
+
+#this will lookup for default region ie us-east-1 and map to corresponding ami
+variable "region" {
+default = "us-east-1"
+}
+
+
+
+variable "ami" {
+  type = map
+  default = {
+  us-east-1 = "ami-0533f2ba8a1995cf9"
+  ap-south-1 = "ami-068d43a544160b7ef"
+  }
+}
+
+
+#this will check default value in main.tf which is "prod" and map to correspoding instance_type "t3.micro"
+variable "instancetype" {
+  type = map
+  default = {
+  dev = "t2.micro"
+  prod = "t3.micro"
+  }
+}
