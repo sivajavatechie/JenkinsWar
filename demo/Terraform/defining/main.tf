@@ -34,6 +34,9 @@ arguments defined inside resource module:
   ami           = var.ami                     (or) "${var.ami}"                 // variable "ami" {}
   instance_type = var.hardware                (or) "${var.hardware}"           // variable "hardware" {}
   key_name      = var.keyname                 (or) "${var.keyname}"           // variable "keyname" {}
+  vpc_security_group_ids = [var.sg]             
+
+
   tags = {                                    (or) "${var.tags}"             // variable "tags" {}
     Name = "This server by terraform code"
   }
