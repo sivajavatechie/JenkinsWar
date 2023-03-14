@@ -40,6 +40,11 @@ arguments defined inside resource module:
 
 
 
+=============================================================
 
+tags = {
+Name        = "My bucket"
+Environment = "Dev"
+}
 
 
