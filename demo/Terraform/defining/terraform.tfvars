@@ -2,7 +2,7 @@ variables  defined in variable.tf files
 
 
 
-
+Ref : server-with-variablefile-pass & example-terraform-tfvars
 
 #terraform.tfvars
 
