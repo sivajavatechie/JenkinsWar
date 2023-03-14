@@ -34,11 +34,11 @@ profile = "default"                                        //server
 Note: usually passed as static only.
 
 2. syntax: region
-region     = "${var.region}"
+region     = "${var.region}"            // variable "region" {}
 
 3.syntax: access key & secret key 
-access_key = "${var.access_key}"
-secret_key = "${var.secret_key}"
+access_key = "${var.access_key}"       // variable "access_key" {}
+secret_key = "${var.secret_key}"       // variable "secret_key" {}
 
 
 
