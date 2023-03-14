@@ -21,7 +21,12 @@ region = "us-east-1"
 3.syntax: access key & secret key 
 access_key =
 secret_key =
-  
+ 
+4.aws credential file
+shared_credentials_file = "/root/.aws/credentials"         //server
+
+5.profile
+profile = "default"                                        //server
 ================================================
 
 [ Dynamic method : passing variable ]
