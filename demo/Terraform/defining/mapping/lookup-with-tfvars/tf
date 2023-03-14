@@ -1,6 +1,10 @@
 terraform.tfvars = only change we make in this method by putting variable values in this file and
 call 'file' during terraform apply.
 
+command:
+Instead of using > terraform apply -var "region=us-east-1"
+here we use > terraform apply -var-file="terraform.tfvars"
+
 
 steps:
 1. create all below tf files
