@@ -34,7 +34,7 @@ profile = "default"                                        //server
 Note: usually passed as static only.
 
 2. syntax: region
-region     = "${var.region}"            // variable "region" {}
+region     = "${var.region}" (or) var.region           // variable "region" {}
 
 3.syntax: access key & secret key 
 access_key = "${var.access_key}"       // variable "access_key" {}
