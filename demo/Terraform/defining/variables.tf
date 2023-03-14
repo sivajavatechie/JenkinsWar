@@ -1,1 +1,3 @@
+Dynamic method : passing variable
+
 
