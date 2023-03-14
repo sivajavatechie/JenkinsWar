@@ -31,10 +31,10 @@ arguments defined inside resource module:
 
 [ Dynamic method ]
 
-  ami           = var.ami                           // variable "ami" {}
-  instance_type = var.hardware                      // variable "hardware" {}
-  key_name      = var.keyname                       // variable "keyname" {}
-  tags = {
+  ami           = var.ami                     (or) "${var.ami}"                 // variable "ami" {}
+  instance_type = var.hardware                (or) "${var.hardware}"           // variable "hardware" {}
+  key_name      = var.keyname                 (or) "${var.keyname}"           // variable "keyname" {}
+  tags = {                                    (or) "${var.tags}"             // variable "tags" {}
     Name = "This server by terraform code"
   }
 
