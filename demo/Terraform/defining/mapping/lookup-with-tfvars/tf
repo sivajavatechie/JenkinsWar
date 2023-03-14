@@ -1,7 +1,10 @@
 terraform.tfvars = only change we make in this method by putting variable values in this file and
 call 'file' during terraform apply.
 
-Note: file name - extension should be "file.tfvars"
+Note: 
+1.file name - extension should be "file.tfvars"
+2. you can create any number of file.tfvars as per your env requirements.
+Ex: prod.tfavrs & dev.tfvards & qa.tfvars  [ you can put ami , region , instancetype etc in each of these file ]
 
 command:
 Instead of using > terraform apply -var "region=us-east-1"
