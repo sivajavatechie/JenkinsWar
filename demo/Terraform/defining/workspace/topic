@@ -14,6 +14,8 @@ terraform workspace delete <prod>
 
 
 1.git clone <url>   [ url : prod.tfvars & dev.tfvars ]
+
+2.terraform init
 2. terraform workspace list [ initially default will be there ]
 3. create env folders [ prod & dev ]  [ first create terraform.tfstate.d and inside that prod & dev gets created ]
 3a. terraform workspace new prod 
@@ -24,12 +26,12 @@ Path: terrform.tfstate.d/prod/terrform.tfstate  & terrform.tfstate.d/dev/terrfor
 4. terraform workspace select prod [ set prod as default before applying ]
    (or) terraform workspace select dev [ if you choose dev as your env ]
  
-5.terraform init
-6.terraform plan -var-file="prod.tfvars" [ you can see reflect here ]
+
+5.terraform plan -var-file="prod.tfvars" --auto-approve [ you can see reflect here ]
    
  Note: var file extension should be: env.tfvars [ ex: prod.tfvars ]  
    
-7. terraform apply -var-file="prod.tfvars"    [ tfstate file will get saved in prod.tfvars ]  ( or )
+6. terraform apply -var-file="prod.tfvars"    [ tfstate file will get saved in prod.tfvars ]  ( or )
    terraform apply -var-file="dev.tfvars" [ tfstate file gets saved in dev.tfvars ]
 
 
