@@ -1,3 +1,5 @@
+Ref link:https://k21academy.com/terraform-iac/variables-in-terraform/
+
 terraform.tfvars = only change we make in this method by putting variable values in this file and
 call 'file' during terraform apply.
 
