@@ -1,0 +1,31 @@
+1.Manage jenkins > terraform ( 1.0.10 )
+
+2.Global tool configuration:
+Name: terraform
+remove install automatically
+Install directory:/usr/local/bin/terraform 
+apply>save
+
+
+-------------------------------------------
+
+
+Freestyle job > Name: workspace>create
+Configure:
+choice para >> Name:env , value:prod dev
+Restrict label : jenkinsmaster
+git : https://github.com/saravananajay/own-terraform-code.git, branch : main
+Build env>>delete workspace before build starts
+Build steps >> execute shell
+
+cd $WORKSPACE/terraform-code/workspaces
+terraform init
+terraform workspace new $env
+terraform workspace select $env
+terraform apply -var-file="$env.tfvars" --auto-approve
+apply>save
+
+
+Build with parameters
+env: choose env
+Build
