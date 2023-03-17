@@ -1,2 +1,0 @@
-Task : Write a script to create new instance and scheduled the script to be executed by tomorrow midnight 12:00 AM
-		Once the first script is executed, then the second script should be scheduled in such a way that the created instance should be terminated by tomorrow noon 12:00 PM
