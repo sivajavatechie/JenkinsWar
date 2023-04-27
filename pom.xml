@@ -4,7 +4,7 @@
   <groupId>com.jenkins.demo</groupId>
   <artifactId>demoapp</artifactId>
   <packaging>war</packaging>
-  <version>2.0</version>
+  <version>1.0-SNAPSHOT</version>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -19,7 +19,7 @@
         <repository>
          <id>mynexus-id</id>
          <name>myrelease</name>
-         <url>http://54.172.65.245:8081/repository/myrelease/</url>
+         <url>http://54.172.65.245:8081/repository/mysnapshot/</url>
        </repository>	   
 </distributionManagement>  
 </project>
