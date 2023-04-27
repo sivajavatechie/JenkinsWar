@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Deploy package on Tomcat Apr24</h2>
+<h2>maven clean deploy to nexus Apr27</h2>
 </body>
 </html>
