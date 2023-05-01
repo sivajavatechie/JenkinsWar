@@ -6,7 +6,7 @@ agent {
 stages {
   stage('GIT-CLONE') {
     steps {
-      git branch: 'main', credentialsId: 'git', url: 'https://github.com/Vimala-Daniel/devops.git'
+      git branch: 'main', credentialsId: 'git', url: 'https://github.com/Vimala-Daniel/JenkinsWar.git'
     }
    }	
   stage('MAVEN-BUILD') {
